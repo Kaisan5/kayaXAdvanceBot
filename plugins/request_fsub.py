@@ -153,8 +153,8 @@ async def add_force_sub(client: Client, message: Message):
 
         await db.add_channel(channel_id)
         return await temp.edit(
-            f"<b>✅ Force-sub channel added successfully!</b>\n\n"
-            f"<b>Name:</b> <a href='{link}'>{chat.title}</a>\n"
+            f"<b><blockquote>✅ Force-sub channel added successfully!</blockquote></b>\n\n"
+            f"<b><blockquote>Name:</blockquote></b> <a href='{link}'>{chat.title}</a>\n"
             f"<b>ID:</b> <code>{channel_id}</code>",
             disable_web_page_preview=True
         )

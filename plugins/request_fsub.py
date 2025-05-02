@@ -1,14 +1,5 @@
-# Don't Remove Credit @CodeFlix_Bots, @rohit_1888
-# Ask Doubt on telegram @CodeflixSupport
-#
-# Copyright (C) 2025 by Codeflix-Bots@Github, < https://github.com/Codeflix-Bots >.
-#
-# This file is part of < https://github.com/Codeflix-Bots/FileStore > project,
-# and is released under the MIT License.
-# Please see < https://github.com/Codeflix-Bots/FileStore/blob/master/LICENSE >
-#
-# All rights reserved.
-#
+#Stelleron_Hunter
+
 import asyncio
 import os
 import random
@@ -23,17 +14,6 @@ from config import *
 from helper_func import *
 from database.database import *
 
-# Don't Remove Credit @CodeFlix_Bots, @rohit_1888
-# Ask Doubt on telegram @CodeflixSupport
-#
-# Copyright (C) 2025 by Codeflix-Bots@Github, < https://github.com/Codeflix-Bots >.
-#
-# This file is part of < https://github.com/Codeflix-Bots/FileStore > project,
-# and is released under the MIT License.
-# Please see < https://github.com/Codeflix-Bots/FileStore/blob/master/LICENSE >
-#
-# All rights reserved.
-#
 
 #Request force sub mode commad,,,,,,
 @Bot.on_message(filters.command('fsub_mode') & filters.private & admin)
@@ -219,7 +199,7 @@ async def list_force_sub_channels(client: Client, message: Message):
         try:
             chat = await client.get_chat(ch_id)
             link = chat.invite_link or await client.export_chat_invite_link(chat.id)
-            result += f"<b><blockquote>•</b> <a href='{link}'>{chat.title}</a></blockquote></b></a>\n [<code>{ch_id}</code>]\n"
+            result += f"<b><blockquote><a>•</b> <a href='{link}'>{chat.title}</a></blockquote></b></a>\n [<code>{ch_id}</code>]\n"
         except Exception:
             result += f"<b>•</b> <code>{ch_id}</code> — <i>Unavailable</i>\n"
 

@@ -219,9 +219,9 @@ async def list_force_sub_channels(client: Client, message: Message):
         try:
             chat = await client.get_chat(ch_id)
             link = chat.invite_link or await client.export_chat_invite_link(chat.id)
-            result += f"<b><blockquote>•</b> <a href='{link}'>{chat.title}</a> [<code>{ch_id}</code>]</blockquote></b>\n"
+            result += f"<b><blockquote>•</b> <a href='{link}'>{chat.title}</a></blockquote></b></a>\n [<code>{ch_id}</code>]\n"
         except Exception:
-            result += f"<b><blockquote>•</b> <code>{ch_id}</code> — <i>Unavailable</i></blockquote></b>\n"
+            result += f"<b>•</b> <code>{ch_id}</code> — <i>Unavailable</i>\n"
 
     await temp.edit(result, disable_web_page_preview=True, reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("Close ✖️", callback_data="close")]]))
 

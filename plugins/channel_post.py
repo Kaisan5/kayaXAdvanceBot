@@ -1,4 +1,4 @@
-#(©)Codexbotz
+#Stelleron_Hunter
 
 import asyncio
 from pyrogram import filters, Client

@@ -1,5 +1,4 @@
-#(©)CodeFlix_Bots
-#rohit_1888 on Tg #Dont remove this line
+#Stelleron_Hunter
 
 import base64
 import re
@@ -114,7 +113,7 @@ async def get_message_id(client, message):
     elif message.forward_sender_name:
         return 0
     elif message.text:
-        pattern = "https://t.me/(?:c/)?(.*)/(\d+)"
+        pattern = r"https://t.me/(?:c/)?(.*)/(\d+)"
         matches = re.match(pattern,message.text)
         if not matches:
             return 0
@@ -164,4 +163,4 @@ def get_exp_time(seconds):
 subscribed = filters.create(is_subscribed)
 admin = filters.create(check_admin)
 
-#rohit_1888 on Tg :
+#Stelleron_Hunter

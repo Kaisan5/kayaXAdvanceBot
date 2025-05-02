@@ -154,7 +154,7 @@ async def add_force_sub(client: Client, message: Message):
         await db.add_channel(channel_id)
         return await temp.edit(
             f"<b><blockquote>✅ Force-sub channel added successfully!</blockquote></b>\n\n"
-            f"<b><blockquote>Name:</blockquote></b> <a href='{link}'>{chat.title}</a>\n"
+            f"<b>Name:</b> <a href='{link}'>{chat.title}</a>\n"
             f"<b>ID:</b> <code>{channel_id}</code>",
             disable_web_page_preview=True
         )
@@ -214,14 +214,14 @@ async def list_force_sub_channels(client: Client, message: Message):
     if not channels:
         return await temp.edit("<b>❌ No force-sub channels found.</b>")
 
-    result = "<b>⚡ Force-sub Channels:</b>\n\n"
+    result = "<b><blockquote>⚡ Force-sub Channels:</blockquote></b>\n\n"
     for ch_id in channels:
         try:
             chat = await client.get_chat(ch_id)
             link = chat.invite_link or await client.export_chat_invite_link(chat.id)
-            result += f"<b>•</b> <a href='{link}'>{chat.title}</a> [<code>{ch_id}</code>]\n"
+            result += f"<b><blockquote>•</b> <a href='{link}'>{chat.title}</a> [<code>{ch_id}</code>]</blockquote></b>\n"
         except Exception:
-            result += f"<b>•</b> <code>{ch_id}</code> — <i>Unavailable</i>\n"
+            result += f"<b><blockquote>•</b> <code>{ch_id}</code> — <i>Unavailable</i></blockquote></b>\n"
 
     await temp.edit(result, disable_web_page_preview=True, reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("Close ✖️", callback_data="close")]]))
 

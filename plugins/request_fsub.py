@@ -1,14 +1,3 @@
-# Don't Remove Credit @CodeFlix_Bots, @rohit_1888
-# Ask Doubt on telegram @CodeflixSupport
-#
-# Copyright (C) 2025 by Codeflix-Bots@Github, < https://github.com/Codeflix-Bots >.
-#
-# This file is part of < https://github.com/Codeflix-Bots/FileStore > project,
-# and is released under the MIT License.
-# Please see < https://github.com/Codeflix-Bots/FileStore/blob/master/LICENSE >
-#
-# All rights reserved.
-#
 import asyncio
 import os
 import random
@@ -22,18 +11,6 @@ from bot import Bot
 from config import *
 from helper_func import *
 from database.database import *
-
-# Don't Remove Credit @CodeFlix_Bots, @rohit_1888
-# Ask Doubt on telegram @CodeflixSupport
-#
-# Copyright (C) 2025 by Codeflix-Bots@Github, < https://github.com/Codeflix-Bots >.
-#
-# This file is part of < https://github.com/Codeflix-Bots/FileStore > project,
-# and is released under the MIT License.
-# Please see < https://github.com/Codeflix-Bots/FileStore/blob/master/LICENSE >
-#
-# All rights reserved.
-#
 
 #Request force sub mode commad,,,,,,
 @Bot.on_message(filters.command('fsub_mode') & filters.private & admin)
@@ -98,17 +75,7 @@ async def handle_join_request(client, chat_join_request):
             await db.req_user(chat_id, user_id)
             #print(f"Added user {user_id} to request list for {chat_id}")
 
-# Don't Remove Credit @CodeFlix_Bots, @rohit_1888
-# Ask Doubt on telegram @CodeflixSupport
-#
-# Copyright (C) 2025 by Codeflix-Bots@Github, < https://github.com/Codeflix-Bots >.
-#
-# This file is part of < https://github.com/Codeflix-Bots/FileStore > project,
-# and is released under the MIT License.
-# Please see < https://github.com/Codeflix-Bots/FileStore/blob/master/LICENSE >
-#
-# All rights reserved.
-#
+
 
 # Add channel
 @Bot.on_message(filters.command('addchnl') & filters.private & admin)
@@ -164,19 +131,6 @@ async def add_force_sub(client: Client, message: Message):
             f"<b>❌ Failed to add channel:</b>\n<code>{channel_id}</code>\n\n<i>{e}</i>"
         )
 
-
-# Don't Remove Credit @CodeFlix_Bots, @rohit_1888
-# Ask Doubt on telegram @CodeflixSupport
-#
-# Copyright (C) 2025 by Codeflix-Bots@Github, < https://github.com/Codeflix-Bots >.
-#
-# This file is part of < https://github.com/Codeflix-Bots/FileStore > project,
-# and is released under the MIT License.
-# Please see < https://github.com/Codeflix-Bots/FileStore/blob/master/LICENSE >
-#
-# All rights reserved.
-#
-
 # Delete channel
 @Bot.on_message(filters.command('delchnl') & filters.private & admin)
 async def del_force_sub(client: Client, message: Message):
@@ -214,25 +168,14 @@ async def list_force_sub_channels(client: Client, message: Message):
     if not channels:
         return await temp.edit("<b>❌ No force-sub channels found.</b>")
 
-    result = "<b>⚡ Force-sub Channels:</b>\n\n"
+    result = "<b><blockquote></a>⚡ Force-sub Channels:</a></blockquote></b></a>\n<p align="center"><img src="https://litter.catbox.moe/5lspqm.jpg"></p>"
     for ch_id in channels:
         try:
             chat = await client.get_chat(ch_id)
             link = chat.invite_link or await client.export_chat_invite_link(chat.id)
-            result += f"<b>•</b> <a href='{link}'>{chat.title}</a> [<code>{ch_id}</code>]\n"
+            result += f"<b><a>★━━━━━━━━━━━━━━━━━━━━━━⋞</a><b><blockquote><a> <a href='{link}'>{chat.title}</a> [<code>{ch_id}</code>]</a></blockquote></b>\n"
         except Exception:
             result += f"<b>•</b> <code>{ch_id}</code> — <i>Unavailable</i>\n"
 
     await temp.edit(result, disable_web_page_preview=True, reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("Close ✖️", callback_data="close")]]))
 
-# Don't Remove Credit @CodeFlix_Bots, @rohit_1888
-# Ask Doubt on telegram @CodeflixSupport
-#
-# Copyright (C) 2025 by Codeflix-Bots@Github, < https://github.com/Codeflix-Bots >.
-#
-# This file is part of < https://github.com/Codeflix-Bots/FileStore > project,
-# and is released under the MIT License.
-# Please see < https://github.com/Codeflix-Bots/FileStore/blob/master/LICENSE >
-#
-# All rights reserved.
-#

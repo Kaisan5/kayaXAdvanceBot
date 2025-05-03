@@ -65,7 +65,7 @@ async def cb_handler(client: Bot, query: CallbackQuery):
                 [
                     [
                         InlineKeyboardButton(
-                            "ADMIN 24/7", url=(SCREENSHOT_URL)
+                            "Cʟɪᴄᴋ Hᴇʀᴇ Tᴏ ᴄᴏɴᴛᴀᴄᴛ Aᴅᴍɪɴ 𝟸𝟺/𝟽", url=(SCREENSHOT_URL)
                         )
                     ],
                     [InlineKeyboardButton("🔒 Close", callback_data="close")],

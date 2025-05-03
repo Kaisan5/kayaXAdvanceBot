@@ -77,7 +77,7 @@ USER_REPLY_TEXT = "ʙᴀᴋᴋᴀ ! ʏᴏᴜ ᴀʀᴇ ɴᴏᴛ ᴍʏ ꜱᴇɴᴘ
 #==========================(BUY PREMIUM)====================#
 OWNER_TAG = os.environ.get("OWNER_TAG", "EternalsHelplineBot")
 UPI_ID = os.environ.get("UPI_ID", "EternalsHelplineBot")
-QR_PIC = os.environ.get("QR_PIC", "https://litter.catbox.moe/et8zvc.jpg")
+QR_PIC = os.environ.get("QR_PIC", "https://litter.catbox.moe/5lspqm.jpg")
 SCREENSHOT_URL = os.environ.get("SCREENSHOT_URL", f"t.me/EternalsHelplineBot")
 #--------------------------------------------
 #Time and its price

@@ -75,7 +75,7 @@ DISABLE_CHANNEL_BUTTON = os.environ.get("DISABLE_CHANNEL_BUTTON", None) == 'True
 BOT_STATS_TEXT = "<b>BOT UPTIME</b>\n{uptime}"
 USER_REPLY_TEXT = "ʙᴀᴋᴋᴀ ! ʏᴏᴜ ᴀʀᴇ ɴᴏᴛ ᴍʏ ꜱᴇɴᴘᴀɪ!!\n\n» ᴍʏ ᴏᴡɴᴇʀ : @EternalsHelplineBot !!\n\n👋Hᴇʏ Fʀɪᴇɴᴅ,🚫Dᴏɴ'ᴛ sᴇɴᴅ ᴀɴʏ ᴍᴇssᴀɢᴇs ᴛᴏ ᴍᴇ ᴅɪʀᴇᴄᴛʟʏ I'ᴍ ᴏɴʟʏ Fɪʟᴇ Sʜᴀʀᴇ ʙᴏᴛ!"
 #==========================(BUY PREMIUM)====================#
-OWNER_TAG = os.environ.get("OWNER_TAG", "EternalsHelplineBot")
+OWNER_TAG = os.environ.get("OWNER_TAG", "You_become_what_you_Think")
 UPI_ID = os.environ.get("UPI_ID", "EternalsHelplineBot")
 QR_PIC = os.environ.get("QR_PIC", "https://litter.catbox.moe/5lspqm.jpg")
 SCREENSHOT_URL = os.environ.get("SCREENSHOT_URL", f"t.me/EternalsHelplineBot")

@@ -45,17 +45,20 @@ async def cb_handler(client: Bot, query: CallbackQuery):
             chat_id=query.message.chat.id,
             photo=QR_PIC,
             caption=(
-                f"<b><blockquote><a>{query.from_user.username}</a></blockquote></b>\n"
-                f"★━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━⋞\n\n"
-                f"<b><blockquote expandable><a> Available Plans :\n\n"
-                f" {PRICE1}  For 1 Month Prime Membership\n"
-                f" {PRICE2}  For 3 Months Prime Membership\n"
-                f" {PRICE3}  For 6 Months Prime Membership\n"
-                f" {PRICE4}  For 1 Year Prime Membership\n</a></blockquote expandable></b>"
-                f"★━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━⋞\n"
-                f"<b><blockquote><a>ASK UPI ID TO ADMIN AND PAY THERE -  <code>{UPI_ID}</code>\n\n"
-                f"After Payment You Will Get Instant Membership \n\n"
-                f"Must Send Screenshot after payment & If anyone want custom time membrship then ask admin</a></blockquote></b>"
+                f"<b><blockquote><a>Unlock premium access today and enjoy unlimited entertainment!</a></blockquote></b>\n"
+                f"<b><blockquote><a> Available Plans :\n\n"
+                f"• {PRICE1}  For 1 Months (Best Deal!)\n"
+                f"• {PRICE2}  For 3 Months\n"
+                f"• {PRICE3}  For 6 Months\n"
+                f"• {PRICE4}  For 1 Year (Maximum Savings!)\n</a></blockquote expandable></b>\n"
+                f"<b><blockquote expandable><a>ASK UPI ID TO ADMIN AND PAY THERE - @EternalsHelplineBot\n\n"
+                f"After Payment You Will Get Instant Membership\n"
+                f"Must Send Screenshot after payment & If anyone want custom time membrship then ask admin</a></blockquote expandable></b>\n"
+                f"★━━━━━━━━━━━━━━━━━━━━━⋞\n"
+                f"<b><blockquote><a> >> Why Go Premium?\n"
+                f">> Full Access - Unlock all adult content files Across premium channels\n"
+                f">> No More Annoying Links\n"
+                f">> Flexible Payment Options - UPI Accepted</a></blockquote></b>"
             ),
             reply_markup=InlineKeyboardMarkup(
                 [

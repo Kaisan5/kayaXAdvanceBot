@@ -1,16 +1,3 @@
-
-# Don't Remove Credit @CodeFlix_Bots, @rohit_1888
-# Ask Doubt on telegram @CodeflixSupport
-#
-# Copyright (C) 2025 by Codeflix-Bots@Github, < https://github.com/Codeflix-Bots >.
-#
-# This file is part of < https://github.com/Codeflix-Bots/FileStore > project,
-# and is released under the MIT License.
-# Please see < https://github.com/Codeflix-Bots/FileStore/blob/master/LICENSE >
-#
-# All rights reserved.
-#
-
 from aiohttp import web
 from plugins import web_server
 import asyncio
@@ -20,7 +7,7 @@ from pyrogram.enums import ParseMode
 import sys
 import pytz
 from datetime import datetime
-#rohit_1888 on Tg
+
 from config import *
 from database.db_premium import *
 from database.database import *
@@ -44,7 +31,7 @@ scheduler.add_job(daily_reset_task, "cron", hour=0, minute=0)
 
 
 name ="""
- BY CODEFLIX BOTS
+ BY STELLERON BOTS
 """
 
 def get_indian_time():
@@ -79,22 +66,22 @@ class Bot(Client):
         except Exception as e:
             self.LOGGER(__name__).warning(e)
             self.LOGGER(__name__).warning(f"Make Sure bot is Admin in DB Channel, and Double check the CHANNEL_ID Value, Current Value {CHANNEL_ID}")
-            self.LOGGER(__name__).info("\nBot Stopped. Join https://t.me/weebs_support for support")
+            self.LOGGER(__name__).info("\nBot Stopped. Join https://t.me/Stelleron_Hunter for support")
             sys.exit()
 
         self.set_parse_mode(ParseMode.HTML)
-        self.LOGGER(__name__).info(f"Bot Running..!\n\nCreated by \nhttps://t.me/weebs_support")
-        self.LOGGER(__name__).info(f"""       
+        self.LOGGER(__name__).info(f"Bot Running..!\n\nCreated by \nhttps://t.me/Stelleron_Hunter")
+        self.LOGGER(__name__).info(r"""       
 
 
-  ___ ___  ___  ___ ___ _    _____  _____  ___ _____ ___ 
- / __/ _ \|   \| __| __| |  |_ _\ \/ / _ )/ _ \_   _/ __|
-| (_| (_) | |) | _|| _|| |__ | | >  <| _ \ (_) || | \__ \
- \___\___/|___/|___|_| |____|___/_/\_\___/\___/ |_| |___/
+   ________________   __   _______  ____  _ __
+  / __/_  __/ __/ /  / /  / __/ _ \/ __ \/ |/ /
+ _\ \  / / / _// /__/ /__/ _// , _/ /_/ /    / 
+/___/ /_/ /___/____/____/___/_/|_|\____/_/|_/  
+                                               
                                                          
  
                                           """)
-
         self.set_parse_mode(ParseMode.HTML)
         self.username = usr_bot_me.username
         self.LOGGER(__name__).info(f"Bot Running..! Made by @Codeflix_Bots")   
@@ -123,12 +110,3 @@ class Bot(Client):
             self.LOGGER(__name__).info("Shutting down...")
         finally:
             loop.run_until_complete(self.stop())
-
-#
-# Copyright (C) 2025 by Codeflix-Bots@Github, < https://github.com/Codeflix-Bots >.
-#
-# This file is part of < https://github.com/Codeflix-Bots/FileStore > project,
-# and is released under the MIT License.
-# Please see < https://github.com/Codeflix-Bots/FileStore/blob/master/LICENSE >
-#
-# All rights reserved.

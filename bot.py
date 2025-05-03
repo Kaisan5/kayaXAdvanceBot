@@ -78,7 +78,7 @@ class Bot(Client):
         self.LOGGER(__name__).info(f"""       
 
 
-     ________________   __   _______  ____  _  __
+     ________________   __   _______  ____  _ __
   / __/_  __/ __/ /  / /  / __/ _ \/ __ \/ |/ /
  _\ \  / / / _// /__/ /__/ _// , _/ /_/ /    / 
 /___/ /_/ /___/____/____/___/_/|_|\____/_/|_/  
@@ -86,7 +86,6 @@ class Bot(Client):
                                                          
  
                                           """)
-
         self.set_parse_mode(ParseMode.HTML)
         self.username = usr_bot_me.username
         self.LOGGER(__name__).info(f"Bot Running..! Made by @Stelleron_Hunter")   

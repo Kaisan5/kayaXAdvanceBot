@@ -40,7 +40,7 @@ HELP_TXT = "<b><blockquote><a>Hᴇʟʟᴏ!! Wᴇʟᴄᴏᴍᴇ ᴛᴏ <a href=ht
 ABOUT_TXT = "<b><blockquote><a>◈sᴜᴘʀᴇᴀᴍ: <a href=https://t.me/Stelleron_Hunter>sᴛᴇʟʟᴇʀᴏɴ</a>\n◈ᴀɴɪᴍᴇ ᴄʜᴀɴɴᴇʟ : <a href=https://t.me/Anime_Eternals>ᴇᴛᴇʀɴᴀʟs</a>\n◈ᴏɴɢᴏɪɴɢ ᴀɪʀɪɴɢs : <a href=https://t.me/+VxWwaMA6g_JkNTA9>ᴏɴɢᴏɪɴɢ</a>\n◈ᴇᴄᴄʜɪ ᴅᴇx : <a href=https://t.me/Ecchi_Dex>ᴇᴄᴄʜɪ</a>\n◈ʜᴇʟᴘʟɪɴᴇ : <a href=https://t.me/EternalsHelplineBot>ʜᴇʟᴘʟɪɴᴇ</a></blockquote expandable></b>"
 #--------------------------------------------
 #--------------------------------------------
-START_MSG = os.environ.get("START_MESSAGE", "<b>ʜᴇʟʟᴏ {first}\n\n<blockquote> ɪ ᴀᴍ ғɪʟᴇ sᴛᴏʀᴇ ʙᴏᴛ, ɪ ᴄᴀɴ sᴛᴏʀᴇ ᴘʀɪᴠᴀᴛᴇ ғɪʟᴇs ɪɴ sᴘᴇᴄɪғɪᴇᴅ ᴄʜᴀɴɴᴇʟ ᴀɴᴅ ᴏᴛʜᴇʀ ᴜsᴇʀs ᴄᴀɴ ᴀᴄᴄᴇss ɪᴛ ғʀᴏᴍ sᴘᴇᴄɪᴀʟ ʟɪɴᴋ.</blockquote></b>")
+START_MSG = os.environ.get("START_MESSAGE", "<b><blockquote><a>Hᴇʏ! {mention} Wᴇʟᴄᴏᴍᴇ Tᴏ Cᴏᴍᴍᴜɴɪᴛʏ Iғ ʏᴏᴜ ᴡᴀɴᴛ ᴛᴏ sᴜᴘᴘᴏʀᴛ ᴏᴜʀ ᴄᴏᴍᴍᴜɴɪᴛʏ ʏᴏᴜ ᴄᴀɴ ᴅᴏ sᴏ ʙʏ sᴜʙsᴄʀɪʙɪɴɢ ᴛᴏ ᴏᴜʀ ᴄʜᴀɴɴᴇʟ</a>/blockquote></b></a>\n<blockquote expandable></a>Gᴜɪᴅᴇ Tᴏ Wᴀᴛᴄʜ Vɪᴅᴇᴏ Wɪᴛʜ Sᴜʙᴛɪᴛʟᴇs Iғ Sᴜʙᴛɪᴛʟᴇs Nᴏᴛ Sʜᴏᴡɪɴɢ\n</a>❏ ᴛᴜᴛᴏʀɪᴀʟ\n</a>├ <a href=https://telegra.ph/HOW-TO-WATCH-04-20-3>Cʟɪᴄᴋ Hᴇʀᴇ </a>\n❏ Hᴇʟᴘʟɪɴᴇ Bᴏᴛ</a>\n├ <a href=https://t.me/EternalsHelplineBot>Hᴇʟᴘʟɪɴᴇ </a>\nTʜᴀɴᴋs Fᴏʀ ʏᴏᴜʀ Sᴜᴘᴘᴏʀᴛ</a></blockquote expandable></b>")
 FORCE_MSG = os.environ.get("FORCE_SUB_MESSAGE", "<b><blockquote><a>Hᴇʟʟᴏ!! {first} ᴡᴇʟᴄᴏᴍᴇ ᴛᴏ <a href=https://t.me/Anime_Eternals>Aɴɪᴍᴇ Eᴛᴇʀɴᴀʟs</a></blockquote></b></a><b><a>Yᴏᴜ ɴᴇᴇᴅ ᴛᴏ Jᴏɪɴ ɪɴ ᴍʏ Cʜᴀɴɴᴇʟ/Gʀᴏᴜᴘ ғɪʀsᴛ, Pʟᴇᴀsᴇ sᴜʙsᴄʀɪʙᴇ ᴛᴏ ᴏᴜʀ ᴄʜᴀɴɴᴇʟs ᴛʜʀᴏᴜɢʜ ᴛʜᴇ ʙᴜᴛᴛᴏɴs ʙᴇʟᴏᴡ ᴀɴᴅ sᴛᴀʀᴛ ʙᴏᴛ ᴀɢᴀɪɴ,Fᴏʀ Oɴɢᴏɪɴɢ Aɴɪᴍᴇ ~ <a href=https://t.me/Anime_Ongoing_Airing>ᴏɴɢᴏɪɴɢ ᴀɪʀɪɴɢ</a></b>")
 
 CMD_TXT = """<blockquote><b>» ᴀᴅᴍɪɴ ᴄᴏᴍᴍᴀɴᴅs:</b></blockquote>

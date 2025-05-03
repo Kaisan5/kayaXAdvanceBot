@@ -55,7 +55,7 @@ async def cb_handler(client: Bot, query: CallbackQuery):
                 f"• After Payment You Will Get Instant Membership\n"
                 f"• Must Send Screenshot after payment & If anyone want custom time membrship then ask admin</a></blockquote expandable></b>\n"
                 f"★━━━━━━━━━━━━━━━━━━━━━⋞\n"
-                f"<b><blockquote><a> >>Why Go Premium?\n"
+                f"<b><blockquote><a>>>Why Go Premium?\n"
                 f">>Full Access - Unlock all adult content files Across premium channels\n"
                 f">>No More Annoying Links\n"
                 f">>Flexible Payment Options - UPI Accepted</a></blockquote></b>"

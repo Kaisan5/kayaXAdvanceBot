@@ -168,7 +168,7 @@ async def list_force_sub_channels(client: Client, message: Message):
     if not channels:
         return await temp.edit("<b>❌ No force-sub channels found.</b>")
 
-    result = "<b><blockquote></a> <a href=https://litter.catbox.moe/5lspqm.jpg> ⚡ Force-sub Channels </a></blockquote></b></a>"
+    result = "<b><blockquote></a>⚡ Force-sub Channels</a></blockquote></b>"
     for ch_id in channels:
         try:
             chat = await client.get_chat(ch_id)

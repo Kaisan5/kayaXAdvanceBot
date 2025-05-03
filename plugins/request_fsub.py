@@ -121,7 +121,7 @@ async def add_force_sub(client: Client, message: Message):
 
         await db.add_channel(channel_id)
         return await temp.edit(
-            f"<b>✅ Force-sub channel added successfully!</b>\n\n"
+            f"<b><blockquote><a>✅ Force-sub channel added successfully!</a></blockquote></b>\n\n"
             f"<b>Name:</b> <a href='{link}'>{chat.title}</a>\n"
             f"<b>ID:</b> <code>{channel_id}</code>",
             disable_web_page_preview=True
@@ -172,12 +172,12 @@ async def list_force_sub_channels(client: Client, message: Message):
     if not channels:
         return await temp.edit("<b>❌ No force-sub channels found.</b>")
 
-    result = "<b>⚡ Force-sub Channels:</b>\n\n"
+    result = "<b><blockquote></a>⚡ Force-sub Channels:</a></blockquote></b>\n\n"
     for ch_id in channels:
         try:
             chat = await client.get_chat(ch_id)
             link = chat.invite_link or await client.export_chat_invite_link(chat.id)
-            result += f"<b>•</b> <a href='{link}'>{chat.title}</a> [<code>{ch_id}</code>]\n"
+            result += f"<b>•<b><blockquote><a> <a href='{link}'>{chat.title}</a><blockquote></b></a>\n [<code>{ch_id}</code>]\n"
         except Exception:
             result += f"<b>•</b> <code>{ch_id}</code> — <i>Unavailable</i>\n"
 

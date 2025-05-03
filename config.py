@@ -73,14 +73,12 @@ PROTECT_CONTENT = True if os.environ.get('PROTECT_CONTENT', "False") == "True" e
 DISABLE_CHANNEL_BUTTON = os.environ.get("DISABLE_CHANNEL_BUTTON", None) == 'True'
 #--------------------------------------------
 BOT_STATS_TEXT = "<b>BOT UPTIME</b>\n{uptime}"
-USER_REPLY_TEXT = "ʙᴀᴋᴋᴀ ! ʏᴏᴜ ᴀʀᴇ ɴᴏᴛ ᴍʏ ꜱᴇɴᴘᴀɪ!!"
-
+USER_REPLY_TEXT = "ʙᴀᴋᴋᴀ ! ʏᴏᴜ ᴀʀᴇ ɴᴏᴛ ᴍʏ ꜱᴇɴᴘᴀɪ!!\n\n» ᴍʏ ᴏᴡɴᴇʀ : @EternalsHelplineBot !!\n\n👋Hᴇʏ Fʀɪᴇɴᴅ,🚫Dᴏɴ'ᴛ sᴇɴᴅ ᴀɴʏ ᴍᴇssᴀɢᴇs ᴛᴏ ᴍᴇ ᴅɪʀᴇᴄᴛʟʏ I'ᴍ ᴏɴʟʏ Fɪʟᴇ Sʜᴀʀᴇ ʙᴏᴛ!"
 #==========================(BUY PREMIUM)====================#
-
-OWNER_TAG = os.environ.get("OWNER_TAG", "rohit_1888")
-UPI_ID = os.environ.get("UPI_ID", "rohit23pnb@axl")
-QR_PIC = os.environ.get("QR_PIC", "https://telegra.ph/file/3e83c69804826b3cba066-16cffa90cd682570da.jpg")
-SCREENSHOT_URL = os.environ.get("SCREENSHOT_URL", f"t.me/rohit_1888")
+OWNER_TAG = os.environ.get("OWNER_TAG", "EternalsHelplineBot")
+UPI_ID = os.environ.get("UPI_ID", "EternalsHelplineBot")
+QR_PIC = os.environ.get("QR_PIC", "https://litter.catbox.moe/et8zvc.jpg")
+SCREENSHOT_URL = os.environ.get("SCREENSHOT_URL", f"t.me/EternalsHelplineBot")
 #--------------------------------------------
 #Time and its price
 #1 Month

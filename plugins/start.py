@@ -79,10 +79,16 @@ async def start_command(client: Client, message: Message):
                 await db.update_verify_status(id, verify_token=token, link="")
                 prem_link = f"https://t.me/{client.username}?start=yu3elk{base64_string}7"
                 short_link = await get_shortlink(SHORTLINK_URL, SHORTLINK_API, prem_link)
-                    [InlineKeyboardButton("• ᴏᴘᴇɴ ʟɪɴᴋ •", url=link), 
-                    InlineKeyboardButton('• ᴛᴜᴛᴏʀɪᴀʟ •', url=TUT_VID)],
-                    [InlineKeyboardButton('• ʙᴜʏ ᴘʀᴇᴍɪᴜᴍ •', callback_data='premium')]
-                ]
+
+        buttons = [
+            [
+                InlineKeyboardButton(text="ᴅᴏᴡɴʟᴏᴀᴅ", url=short_link),
+                InlineKeyboardButton(text="ᴛᴜᴛᴏʀɪᴀʟ", url=TUT_VID)
+            ],
+            [
+                InlineKeyboardButton(text="ᴘʀᴇᴍɪᴜᴍ", callback_data="premium")
+            ]
+        ]
                 return await message.reply(
                     f"<b><blockquote><a>𝗬𝗼𝘂𝗿 𝘁𝗼𝗸𝗲𝗻 𝗵𝗮𝘀 𝗲𝘅𝗽𝗶𝗿𝗲𝗱. 𝗣𝗹𝗲𝗮𝘀𝗲 𝗿𝗲𝗳𝗿𝗲𝘀𝗵 𝘆𝗼𝘂𝗿 𝘁𝗼𝗸𝗲𝗻 𝘁𝗼 𝗰𝗼𝗻𝘁𝗶𝗻𝘂𝗲..<a>\n\nHᴇʟᴘʟɪɴᴇ ʙᴏᴛ @EternalsHelplineBot</a></blockquote></b></a><b>\nTᴏᴋᴇɴ Tɪᴍᴇᴏᴜᴛ: {get_exp_time(VERIFY_EXPIRE)}\n\nᴡʜᴀᴛ ɪs ᴛʜᴇ ᴛᴏᴋᴇɴ??</b>\n\nᴛʜɪs ɪs ᴀɴ ᴀᴅs ᴛᴏᴋᴇɴ. ᴘᴀssɪɴɢ ᴏɴᴇ ᴀᴅ ᴀʟʟᴏᴡs ʏᴏᴜ ᴛᴏ ᴜsᴇ ᴛʜᴇ ʙᴏᴛ ғᴏʀ {get_exp_time(VERIFY_EXPIRE)}\n\nAPPLE/IPHONE USERS COPY TOKEN LINK AND OPEN IN CHROME BROWSER</a>\n<b><blockquote expandable></a>𝗪𝗲 𝗮𝗿𝗲 𝗮𝗱𝗱𝗶𝗻𝗴 𝗮 𝘁𝗼𝗸𝗲𝗻 𝘀𝘆𝘀𝘁𝗲𝗺. 𝗦𝗼 𝘁𝗵𝗮𝘁 𝗼𝘂𝗿 𝘄𝗼𝗿𝗸 𝗰𝗮𝗻 𝗰𝗼𝗻𝘁𝗶𝗻𝘂𝗲 𝗹𝗶𝗸𝗲 𝘁𝗵𝗶𝘀. 𝗕𝗲𝗰𝗮𝘂𝘀𝗲 𝘄𝗲 𝗮𝗿𝗲 𝗻𝗼𝘁 𝗲𝗮𝗿𝗻𝗶𝗻𝗴 𝗮𝗻𝘆𝘁𝗵𝗶𝗻𝗴 𝗯𝘆 𝗱𝗼𝗶𝗻𝗴 𝘁𝗵𝗶𝘀 𝗮𝗹𝗹, 𝘁𝗵𝗮𝘁 𝗶𝘀 𝘄𝗵𝘆 𝘄𝗲 𝗮𝗿𝗲 𝗮𝗱𝗱𝗶𝗻𝗴 𝗮 𝘁𝗼𝗸𝗲𝗻 𝘀𝘆𝘀𝘁𝗲𝗺. 𝗜 𝗵𝗼𝗽𝗲 𝘆𝗼𝘂 𝗴𝘂𝘆𝘀 𝘄𝗶𝗹𝗹 𝘀𝘁𝗶𝗹𝗹 𝘀𝘂𝗽𝗽𝗼𝗿𝘁 𝘂𝘀.</a></blockquote expendable></b>",
                     reply_markup=InlineKeyboardMarkup(btn),

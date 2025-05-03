@@ -1,14 +1,4 @@
-# Don't Remove Credit @CodeFlix_Bots, @rohit_1888
-# Ask Doubt on telegram @CodeflixSupport
-#
-# Copyright (C) 2025 by Codeflix-Bots@Github, < https://github.com/Codeflix-Bots >.
-#
-# This file is part of < https://github.com/Codeflix-Bots/FileStore > project,
-# and is released under the MIT License.
-# Please see < https://github.com/Codeflix-Bots/FileStore/blob/master/LICENSE >
-#
-# All rights reserved.
-#
+#Stelleron_Hunter
 
 import asyncio
 import os
@@ -162,7 +152,7 @@ async def start_command(client: Client, message: Message):
 
         if FILE_AUTO_DELETE > 0:
             notification_msg = await message.reply(
-                f"<b>Tʜɪs Fɪʟᴇ ᴡɪʟʟ ʙᴇ Dᴇʟᴇᴛᴇᴅ ɪɴ  {get_exp_time(FILE_AUTO_DELETE)}. Pʟᴇᴀsᴇ sᴀᴠᴇ ᴏʀ ғᴏʀᴡᴀʀᴅ ɪᴛ ᴛᴏ ʏᴏᴜʀ sᴀᴠᴇᴅ ᴍᴇssᴀɢᴇs ʙᴇғᴏʀᴇ ɪᴛ ɢᴇᴛs Dᴇʟᴇᴛᴇᴅ.</b>"
+                f"<b>Tʜɪs Fɪʟᴇ ᴡɪʟʟ ʙᴇ Dᴇʟᴇᴛᴇᴅ ɪɴ <a href=https://t.me/Flix_Dex>{get_exp_time(FILE_AUTO_DELETE)}. </a> Pʟᴇᴀsᴇ sᴀᴠᴇ ᴏʀ ғᴏʀᴡᴀʀᴅ ɪᴛ ᴛᴏ ʏᴏᴜʀ sᴀᴠᴇᴅ ᴍᴇssᴀɢᴇs ʙᴇғᴏʀᴇ ɪᴛ ɢᴇᴛs Dᴇʟᴇᴛᴇᴅ.</b>"
             )
 
             await asyncio.sleep(FILE_AUTO_DELETE)
@@ -193,7 +183,7 @@ async def start_command(client: Client, message: Message):
     else:
         reply_markup = InlineKeyboardMarkup(
             [
-                    [InlineKeyboardButton("• ᴍᴏʀᴇ ᴄʜᴀɴɴᴇʟs •", url="https://t.me/Nova_Flix/50")],
+                    [InlineKeyboardButton("• ᴍᴏʀᴇ ᴄʜᴀɴɴᴇʟs •", url="https://t.me/AnimeNexusNetwork/158")],
 
     [
                     InlineKeyboardButton("• ᴀʙᴏᴜᴛ", callback_data = "about"),
@@ -219,8 +209,7 @@ async def start_command(client: Client, message: Message):
 
 
 #=====================================================================================##
-# Don't Remove Credit @CodeFlix_Bots, @rohit_1888
-# Ask Doubt on telegram @CodeflixSupport
+
 
 
 
@@ -277,7 +266,7 @@ async def not_joined(client: Client, message: Message):
                 except Exception as e:
                     print(f"Error with chat {chat_id}: {e}")
                     return await temp.edit(
-                        f"<b><i>! Eʀʀᴏʀ, Cᴏɴᴛᴀᴄᴛ ᴅᴇᴠᴇʟᴏᴘᴇʀ ᴛᴏ sᴏʟᴠᴇ ᴛʜᴇ ɪssᴜᴇs @rohit_1888</i></b>\n"
+                        f"<b><i>! Eʀʀᴏʀ, Cᴏɴᴛᴀᴄᴛ ᴅᴇᴠᴇʟᴏᴘᴇʀ ᴛᴏ sᴏʟᴠᴇ ᴛʜᴇ ɪssᴜᴇs @EternalsHelplineBot</i></b>\n"
                         f"<blockquote expandable><b>Rᴇᴀsᴏɴ:</b> {e}</blockquote>"
                     )
 

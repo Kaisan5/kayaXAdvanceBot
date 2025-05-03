@@ -1,12 +1,3 @@
-#
-# Copyright (C) 2025 by Codeflix-Bots@Github, < https://github.com/Codeflix-Bots >.
-#
-# This file is part of < https://github.com/Codeflix-Bots/FileStore > project,
-# and is released under the MIT License.
-# Please see < https://github.com/Codeflix-Bots/FileStore/blob/master/LICENSE >
-#
-# All rights reserved.
-
 from pyrogram import Client 
 from bot import Bot
 from config import *
@@ -48,35 +39,23 @@ async def cb_handler(client: Bot, query: CallbackQuery):
         )
 
 
-# Don't Remove Credit @CodeFlix_Bots, @rohit_1888
-# Ask Doubt on telegram @CodeflixSupport
-#
-# Copyright (C) 2025 by Codeflix-Bots@Github, < https://github.com/Codeflix-Bots >.
-#
-# This file is part of < https://github.com/Codeflix-Bots/FileStore > project,
-# and is released under the MIT License.
-# Please see < https://github.com/Codeflix-Bots/FileStore/blob/master/LICENSE >
-#
-# All rights reserved.
-#
-
-
     elif data == "premium":
         await query.message.delete()
         await client.send_photo(
             chat_id=query.message.chat.id,
             photo=QR_PIC,
             caption=(
-                f"👋 {query.from_user.username}\n\n"
-                f"🎖️ Available Plans :\n\n"
-                f"● {PRICE1}  For 0 Days Prime Membership\n\n"
-                f"● {PRICE2}  For 1 Month Prime Membership\n\n"
-                f"● {PRICE3}  For 3 Months Prime Membership\n\n"
-                f"● {PRICE4}  For 6 Months Prime Membership\n\n"
-                f"● {PRICE5}  For 1 Year Prime Membership\n\n\n"
-                f"💵 ASK UPI ID TO ADMIN AND PAY THERE -  <code>{UPI_ID}</code>\n\n\n"
-                f"♻️ After Payment You Will Get Instant Membership \n\n\n"
-                f"‼️ Must Send Screenshot after payment & If anyone want custom time membrship then ask admin"
+                f"<b><blockquote><a>{query.from_user.username}</a></blockquote></b>\n"
+                f"★━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━⋞\n\n"
+                f"<b><blockquote expandable><a> Available Plans :\n\n"
+                f" {PRICE1}  For 1 Month Prime Membership\n"
+                f" {PRICE2}  For 3 Months Prime Membership\n"
+                f" {PRICE3}  For 6 Months Prime Membership\n"
+                f" {PRICE4}  For 1 Year Prime Membership\n</a></blockquote expandable></b>"
+                f"★━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━⋞\n"
+                f"<b><blockquote><a>ASK UPI ID TO ADMIN AND PAY THERE -  <code>{UPI_ID}</code>\n\n"
+                f"After Payment You Will Get Instant Membership \n\n"
+                f"Must Send Screenshot after payment & If anyone want custom time membrship then ask admin</a></blockquote></b>"
             ),
             reply_markup=InlineKeyboardMarkup(
                 [
@@ -154,16 +133,3 @@ async def cb_handler(client: Bot, query: CallbackQuery):
             "sᴇʟᴇᴄᴛ ᴀ ᴄʜᴀɴɴᴇʟ ᴛᴏ ᴛᴏɢɢʟᴇ ɪᴛs ғᴏʀᴄᴇ-sᴜʙ ᴍᴏᴅᴇ:",
             reply_markup=InlineKeyboardMarkup(buttons)
         )
-
-
-# Don't Remove Credit @CodeFlix_Bots, @rohit_1888
-# Ask Doubt on telegram @CodeflixSupport
-#
-# Copyright (C) 2025 by Codeflix-Bots@Github, < https://github.com/Codeflix-Bots >.
-#
-# This file is part of < https://github.com/Codeflix-Bots/FileStore > project,
-# and is released under the MIT License.
-# Please see < https://github.com/Codeflix-Bots/FileStore/blob/master/LICENSE >
-#
-# All rights reserved.
-#

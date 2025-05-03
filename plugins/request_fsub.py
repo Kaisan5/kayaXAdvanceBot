@@ -139,7 +139,7 @@ async def del_force_sub(client: Client, message: Message):
     all_channels = await db.show_channels()
 
     if len(args) != 2:
-        return await temp.edit("<b>Usage:</b> <code>/delchnl <channel_id | all></code>")
+        return await temp.edit("<b>Usage:</b> <code>/delchnl &lt;channel_id | all&gt;</code>")
 
     if args[1].lower() == "all":
         if not all_channels:

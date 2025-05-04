@@ -28,6 +28,9 @@ async def start_command(client: Client, message: Message):
     id = message.from_user.id
     is_premium = await is_premium_user(id)
 
+    # ✅ Check Force Subscription
+    if not await is_subscribed(client, user_id):
+        return await not_joined(client, message)
 
     # Check if user is banned
     banned_users = await db.get_ban_users()
@@ -39,7 +42,6 @@ async def start_command(client: Client, message: Message):
                 [[InlineKeyboardButton("Contact Support", url=BAN_SUPPORT)]]
             )
         )
-
 
     # Check if user is an admin and treat them as verified
     if user_id in await db.get_all_admins():
@@ -90,11 +92,6 @@ async def start_command(client: Client, message: Message):
                     quote=True
                 )
 
-    # ✅ Check Force Subscription
-    if not await is_subscribed(client, user_id):
-        #await temp.delete()
-        return await not_joined(client, message)
-
     # File auto-delete time in seconds (Set your desired time in seconds here)
     FILE_AUTO_DELETE = await db.get_del_timer()  # Example: 3600 seconds (1 hour)
 
@@ -115,7 +112,6 @@ async def start_command(client: Client, message: Message):
 
         string = await decode(base64_string)
         argument = string.split("-")
-
         ids = []
         if len(argument) == 3:
             try:
@@ -166,7 +162,7 @@ async def start_command(client: Client, message: Message):
 
         if FILE_AUTO_DELETE > 0:
             notification_msg = await message.reply(
-                f"<b>Tʜɪs Fɪʟᴇ ᴡɪʟʟ ʙᴇ Dᴇʟᴇᴛᴇᴅ ɪɴ <a href=https://t.me/Flix_Dex>{get_exp_time(FILE_AUTO_DELETE)}. </a> Pʟᴇᴀsᴇ sᴀᴠᴇ ᴏʀ ғᴏʀᴡᴀʀᴅ ɪᴛ ᴛᴏ ʏᴏᴜʀ sᴀᴠᴇᴅ ᴍᴇssᴀɢᴇs ʙᴇғᴏʀᴇ ɪᴛ ɢᴇᴛs Dᴇʟᴇᴛᴇᴅ.</b>"
+                f"<b>Tʜɪs Fɪʟᴇ ᴡɪʟʟ ʙᴇ Dᴇʟᴇᴛᴇᴅ ɪɴ <a href=https://t.me/Flix_Dex>{get_exp_time(FILE_AUTO_DELETE)}. </a> Pʟᴇᴀsᴇ sᴀᴠᴇ ᴏʀ ғᴏʀᴡᴀʀᴅ ɪ��[...]"
             )
 
             await asyncio.sleep(FILE_AUTO_DELETE)
@@ -197,13 +193,12 @@ async def start_command(client: Client, message: Message):
     else:
         reply_markup = InlineKeyboardMarkup(
             [
-                    [InlineKeyboardButton("• ᴍᴏʀᴇ ᴄʜᴀɴɴᴇʟs •", url="https://t.me/AnimeNexusNetwork/158")],
+                [InlineKeyboardButton("• ᴍᴏʀᴇ ᴄʜᴀɴɴᴇʟs •", url="https://t.me/AnimeNexusNetwork/158")],
 
-    [
+                [
                     InlineKeyboardButton("• ᴀʙᴏᴜᴛ", callback_data = "about"),
                     InlineKeyboardButton('ʜᴇʟᴘ •', callback_data = "help")
-
-    ]
+                ]
             ]
         )
         await message.reply_photo(
@@ -219,7 +214,6 @@ async def start_command(client: Client, message: Message):
             message_effect_id=5104841245755180586)  # 🔥
         
         return
-
 
 
 #=====================================================================================##

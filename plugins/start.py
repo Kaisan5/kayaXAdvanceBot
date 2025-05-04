@@ -43,55 +43,6 @@ async def start_command(client: Client, message: Message):
             )
         )
 
-    # Check if user is an admin and treat them as verified
-    if user_id in await db.get_all_admins():
-        verify_status = {
-            'is_verified': True,
-            'verify_token': None, 
-            'verified_time': time.time(),
-            'link': ""
-        }
-    else:
-        verify_status = await db.get_verify_status(id)
-
-        # If TOKEN is enabled, handle verification logic
-        if SHORTLINK_URL or SHORTLINK_API:
-            if verify_status['is_verified'] and VERIFY_EXPIRE < (time.time() - verify_status['verified_time']):
-                await db.update_verify_status(user_id, is_verified=False)
-
-            if "verify_" in message.text:
-                _, token = message.text.split("_", 1)
-                if not token_data:
-                   return await message.reply("Your token is invalid or expired. Try again by clicking /start.")
-                await db.update_verify_status(id, is_verified=True, verified_time=time.time())
-                
-                current = await db.get_verify_count(id)
-                await db.set_verify_count(id, current + 1)
-                if verify_status["link"] == "":
-                    reply_markup = None
-                return await message.reply(
-                    f"Your token has been successfully verified and is valid for {get_exp_time(VERIFY_EXPIRE)}",
-                    reply_markup=reply_markup,
-                    protect_content=False,
-                    quote=True
-                )
-
-            if not verify_status['is_verified'] and not is_premium:
-                token = ''.join(random.choices(rohit.ascii_letters + rohit.digits, k=10))
-                await db.update_verify_status(id, verify_token=token, link="")
-                link = await get_shortlink(SHORTLINK_URL, SHORTLINK_API, f'https://telegram.dog/{client.username}?start=verify_{token}')
-                btn = [
-                    [InlineKeyboardButton("• ᴏᴘᴇɴ ʟɪɴᴋ •", url=link), 
-                    InlineKeyboardButton('• ᴛᴜᴛᴏʀɪᴀʟ •', url=TUT_VID)],
-                    [InlineKeyboardButton('• ʙᴜʏ ᴘʀᴇᴍɪᴜᴍ •', callback_data='premium')]
-                ]
-                return await message.reply(
-                    f"<b><blockquote><a>𝗬𝗼𝘂𝗿 𝘁𝗼𝗸𝗲𝗻 𝗵𝗮𝘀 𝗲𝘅𝗽𝗶𝗿𝗲𝗱. 𝗣𝗹𝗲𝗮𝘀𝗲 𝗿𝗲𝗳𝗿𝗲𝘀𝗵 𝘆𝗼𝘂𝗿 𝘁𝗼𝗸𝗲𝗻 𝘁𝗼 𝗰𝗼𝗻𝘁𝗶𝗻𝘂𝗲..<a>\n\nHᴇʟᴘʟɪɴᴇ ʙᴏᴛ @EternalsHelplineBot</a></blockquote></b></a><b>\nTᴏᴋᴇɴ Tɪᴍᴇᴏᴜᴛ: {get_exp_time(VERIFY_EXPIRE)}\n\nᴡʜᴀᴛ ɪs ᴛʜᴇ ᴛᴏᴋᴇɴ??</b>\n\nᴛʜɪs ɪs ᴀɴ ᴀᴅs ᴛᴏᴋᴇɴ. ᴘᴀssɪɴɢ ᴏɴᴇ ᴀᴅ ᴀʟʟᴏᴡs ʏᴏᴜ ᴛᴏ ᴜsᴇ ᴛʜᴇ ʙᴏᴛ ғᴏʀ {get_exp_time(VERIFY_EXPIRE)}\n\nAPPLE/IPHONE USERS COPY TOKEN LINK AND OPEN IN CHROME BROWSER</a>\n<b><blockquote expandable></a>𝗪𝗲 𝗮𝗿𝗲 𝗮𝗱𝗱𝗶𝗻𝗴 𝗮 𝘁𝗼𝗸𝗲𝗻 𝘀𝘆𝘀𝘁𝗲𝗺. 𝗦𝗼 𝘁𝗵𝗮𝘁 𝗼𝘂𝗿 𝘄𝗼𝗿𝗸 𝗰𝗮𝗻 𝗰𝗼𝗻𝘁𝗶𝗻𝘂𝗲 𝗹𝗶𝗸𝗲 𝘁𝗵𝗶𝘀. 𝗕𝗲𝗰𝗮𝘂𝘀𝗲 𝘄𝗲 𝗮𝗿𝗲 𝗻𝗼𝘁 𝗲𝗮𝗿𝗻𝗶𝗻𝗴 𝗮𝗻𝘆𝘁𝗵𝗶𝗻𝗴 𝗯𝘆 𝗱𝗼𝗶𝗻𝗴 𝘁𝗵𝗶𝘀 𝗮𝗹𝗹, 𝘁𝗵𝗮𝘁 𝗶𝘀 𝘄𝗵𝘆 𝘄𝗲 𝗮𝗿𝗲 𝗮𝗱𝗱𝗶𝗻𝗴 𝗮 𝘁𝗼𝗸𝗲𝗻 𝘀𝘆𝘀𝘁𝗲𝗺. 𝗜 𝗵𝗼𝗽𝗲 𝘆𝗼𝘂 𝗴𝘂𝘆𝘀 𝘄𝗶𝗹𝗹 𝘀𝘁𝗶𝗹𝗹 𝘀𝘂𝗽𝗽𝗼𝗿𝘁 𝘂𝘀.</a></blockquote expendable></b>",
-                    reply_markup=InlineKeyboardMarkup(btn),
-                    protect_content=False,
-                    quote=True
-                )
-
     # File auto-delete time in seconds (Set your desired time in seconds here)
     FILE_AUTO_DELETE = await db.get_del_timer()  # Example: 3600 seconds (1 hour)
 
@@ -219,8 +170,6 @@ async def start_command(client: Client, message: Message):
 #=====================================================================================##
 
 
-
-
 # Create a global dictionary to store chat data
 chat_data_cache = {}
 
@@ -307,6 +256,57 @@ async def not_joined(client: Client, message: Message):
             f"<b><i>! Eʀʀᴏʀ, Cᴏɴᴛᴀᴄᴛ ᴅᴇᴠᴇʟᴏᴘᴇʀ ᴛᴏ sᴏʟᴠᴇ ᴛʜᴇ ɪssᴜᴇs @EternalsHelplineBot</i></b>\n"
             f"<blockquote expandable><b>Rᴇᴀsᴏɴ:</b> {e}</blockquote>"
         )
+
+
+#=====================================================================================##
+    # Check if user is an admin and treat them as verified
+    if user_id in await db.get_all_admins():
+        verify_status = {
+            'is_verified': True,
+            'verify_token': None, 
+            'verified_time': time.time(),
+            'link': ""
+        }
+    else:
+        verify_status = await db.get_verify_status(id)
+
+        # If TOKEN is enabled, handle verification logic
+        if SHORTLINK_URL or SHORTLINK_API:
+            if verify_status['is_verified'] and VERIFY_EXPIRE < (time.time() - verify_status['verified_time']):
+                await db.update_verify_status(user_id, is_verified=False)
+
+            if "verify_" in message.text:
+                _, token = message.text.split("_", 1)
+                if not token_data:
+                   return await message.reply("Your token is invalid or expired. Try again by clicking /start.")
+                await db.update_verify_status(id, is_verified=True, verified_time=time.time())
+                
+                current = await db.get_verify_count(id)
+                await db.set_verify_count(id, current + 1)
+                if verify_status["link"] == "":
+                    reply_markup = None
+                return await message.reply(
+                    f"Your token has been successfully verified and is valid for {get_exp_time(VERIFY_EXPIRE)}",
+                    reply_markup=reply_markup,
+                    protect_content=False,
+                    quote=True
+                )
+
+            if not verify_status['is_verified'] and not is_premium:
+                token = ''.join(random.choices(rohit.ascii_letters + rohit.digits, k=10))
+                await db.update_verify_status(id, verify_token=token, link="")
+                link = await get_shortlink(SHORTLINK_URL, SHORTLINK_API, f'https://telegram.dog/{client.username}?start=verify_{token}')
+                btn = [
+                    [InlineKeyboardButton("• ᴏᴘᴇɴ ʟɪɴᴋ •", url=link), 
+                    InlineKeyboardButton('• ᴛᴜᴛᴏʀɪᴀʟ •', url=TUT_VID)],
+                    [InlineKeyboardButton('• ʙᴜʏ ᴘʀᴇᴍɪᴜᴍ •', callback_data='premium')]
+                ]
+                return await message.reply(
+                    f"<b><blockquote><a>𝗬𝗼𝘂𝗿 𝘁𝗼𝗸𝗲𝗻 𝗵𝗮𝘀 𝗲𝘅𝗽𝗶𝗿𝗲𝗱. 𝗣𝗹𝗲𝗮𝘀𝗲 𝗿𝗲𝗳𝗿𝗲𝘀𝗵 𝘆𝗼𝘂𝗿 𝘁𝗼𝗸𝗲𝗻 𝘁𝗼 𝗰𝗼𝗻𝘁𝗶𝗻𝘂𝗲..<a>\n\nHᴇʟᴘʟɪɴᴇ ʙᴏᴛ @EternalsHelplineBot</a></blockquote></b></a><b>\nTᴏᴋᴇɴ Tɪᴍᴇᴏᴜᴛ: {get_exp_time(VERIFY_EXPIRE)}\n\nᴡʜᴀᴛ ɪs ᴛʜᴇ ᴛᴏᴋᴇɴ??</b>\n\nᴛʜɪs ɪs ᴀɴ ᴀᴅs ᴛᴏᴋᴇɴ. ᴘᴀssɪɴɢ ᴏɴᴇ ᴀᴅ ᴀʟʟᴏᴡs ʏᴏᴜ ᴛᴏ ᴜsᴇ ᴛʜᴇ ʙᴏᴛ ғᴏʀ {get_exp_time(VERIFY_EXPIRE)}\n\nAPPLE/IPHONE USERS COPY TOKEN LINK AND OPEN IN CHROME BROWSER</a>\n<b><blockquote expandable></a>𝗪𝗲 𝗮𝗿𝗲 𝗮𝗱𝗱𝗶𝗻𝗴 𝗮 𝘁𝗼𝗸𝗲𝗻 𝘀𝘆𝘀𝘁𝗲𝗺. 𝗦𝗼 𝘁𝗵𝗮𝘁 𝗼𝘂𝗿 𝘄𝗼𝗿𝗸 𝗰𝗮𝗻 𝗰𝗼𝗻𝘁𝗶𝗻𝘂𝗲 𝗹𝗶𝗸𝗲 𝘁𝗵𝗶𝘀. 𝗕𝗲𝗰𝗮𝘂𝘀𝗲 𝘄𝗲 𝗮𝗿𝗲 𝗻𝗼𝘁 𝗲𝗮𝗿𝗻𝗶𝗻𝗴 𝗮𝗻𝘆𝘁𝗵𝗶𝗻𝗴 𝗯𝘆 𝗱𝗼𝗶𝗻𝗴 𝘁𝗵𝗶𝘀 𝗮𝗹𝗹, 𝘁𝗵𝗮𝘁 𝗶𝘀 𝘄𝗵𝘆 𝘄𝗲 𝗮𝗿𝗲 𝗮𝗱𝗱𝗶𝗻𝗴 𝗮 𝘁𝗼𝗸𝗲𝗻 𝘀𝘆𝘀𝘁𝗲𝗺. 𝗜 𝗵𝗼𝗽𝗲 𝘆𝗼𝘂 𝗴𝘂𝘆𝘀 𝘄𝗶𝗹𝗹 𝘀𝘁𝗶𝗹𝗹 𝘀𝘂𝗽𝗽𝗼𝗿𝘁 𝘂𝘀.</a></blockquote expendable></b>",
+                    reply_markup=InlineKeyboardMarkup(btn),
+                    protect_content=False,
+                    quote=True
+                )
 
 #=====================================================================================##
 

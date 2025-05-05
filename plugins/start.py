@@ -214,7 +214,9 @@ async def not_joined(client: Client, message: Message):
                                 expire_date=datetime.utcnow() + timedelta(seconds=FSUB_LINK_EXPIRY) if FSUB_LINK_EXPIRY else None)
                             link = invite.invite_link
 
-                    buttons.append([InlineKeyboardButton(text=name, url=link)])
+                    buttons.append([
+                    InlineKeyboardButton("Join Channel", url=link)
+                 ])
                     count += 1
                     await temp.edit(f"<b>{'! ' * count}</b>")
 
@@ -229,7 +231,7 @@ async def not_joined(client: Client, message: Message):
         try:
             buttons.append([
                 InlineKeyboardButton(
-                    text='♻️ Tʀʏ Aɢᴀɪɴ',
+                    text='‼️Now Click Here‼️',
                     url=f"https://t.me/{client.username}?start={message.command[1]}"
                 )
             ])

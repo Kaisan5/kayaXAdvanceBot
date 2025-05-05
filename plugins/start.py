@@ -264,7 +264,9 @@ async def not_joined(client: Client, message: Message):
                                 expire_date=datetime.utcnow() + timedelta(seconds=FSUB_LINK_EXPIRY) if FSUB_LINK_EXPIRY else None)
                             link = invite.invite_link
 
-                    buttons.append([InlineKeyboardButton(text="Join This Channel", url=link)])
+                    buttons.append([
+                    InlineKeyboardButton(text="• JOIN CHANNEL •", url=link1),
+                    InlineKeyboardButton(text="JOIN CHANNEL •", url=link2)])
                     count += 1
                     await temp.edit(f"<b>{'! ' * count}</b>")
 

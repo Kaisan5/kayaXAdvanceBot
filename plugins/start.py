@@ -265,7 +265,8 @@ async def not_joined(client: Client, message: Message):
                             link = invite.invite_link
 
                     buttons.append([
-                    buttons.append([InlineKeyboardButton("Join Channel", url=link)])
+                    InlineKeyboardButton("Join Channel", url=link)
+                 ])
                     count += 1
                     await temp.edit(f"<b>{'? ' * count}</b>")
 
